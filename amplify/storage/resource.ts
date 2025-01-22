@@ -4,8 +4,9 @@ export const storage = defineStorage({
   name: 'unityhologramiotupdate',
   access: (allow) => ({
     'example/*': [
-      allow.guest.to(['read']),
-      allow.entity('identity').to(['read', 'write', 'delete'])
+        allow.authenticated.to(['read','write']),
+        allow.guest.to(['read']),
+        allow.entity('identity').to(['read', 'write', 'delete'])
     ],
   })
 });
