@@ -8,5 +8,10 @@ export const storage = defineStorage({
         allow.guest.to(['get']),
         allow.entity('identity').to(['get'])
     ],
+    'version/*': [
+      allow.authenticated.to(['get']),
+      allow.guest.to(['get']),
+      allow.entity('identity').to(['get'])
+    ],
   })
 });
